@@ -52,14 +52,29 @@ img {
   max-width: 100%;
 }
 
+
+/* =========================================================
+   GLOBAL CONTENT WIDTH
+
+   This is the common alignment for the entire EPK:
+   Hero
+   About
+   Highlights
+   History
+   Live Set
+   Footer
+   ========================================================= */
+
 .wrap {
   width: min(var(--max), calc(100% - 40px));
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .narrow {
   width: min(720px, calc(100% - 40px));
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -72,9 +87,6 @@ img {
 
   min-height: 92vh;
 
-  display: flex;
-  align-items: flex-end;
-
   overflow: hidden;
 
   border-bottom: 1px solid var(--line);
@@ -85,6 +97,21 @@ img {
   background-position: center center;
   background-attachment: fixed;
 }
+
+
+/* Hero now uses exactly the same width and left edge
+   as every other .wrap section */
+
+.hero-wrap {
+  position: relative;
+  z-index: 2;
+
+  min-height: 92vh;
+
+  display: flex;
+  align-items: flex-end;
+}
+
 
 .overlay {
   position: absolute;
@@ -107,11 +134,10 @@ img {
     );
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
 
-  max-width: 780px;
+.hero-content {
+  width: 100%;
+  max-width: 900px;
 
   padding: 90px 0 72px;
 }
@@ -169,6 +195,7 @@ h3 {
   line-height: 1.35;
 }
 
+
 .tagline {
   margin: 26px 0 0;
 
@@ -178,11 +205,13 @@ h3 {
   line-height: 1.15;
 }
 
+
 .genres {
   margin: 14px 0 0;
 
   font-size: 1.05rem;
 }
+
 
 .meta {
   margin: 5px 0 0;
@@ -204,9 +233,11 @@ h3 {
   margin-top: 30px;
 }
 
+
 .actions.center {
   justify-content: center;
 }
+
 
 .btn {
   display: inline-flex;
@@ -234,11 +265,13 @@ h3 {
     color 0.2s ease;
 }
 
+
 .btn:hover {
   border-color: #8b8b8b;
 
   transform: translateY(-2px);
 }
+
 
 .btn.primary {
   background: var(--accent);
@@ -247,6 +280,7 @@ h3 {
 
   color: #111111;
 }
+
 
 .btn.primary:hover {
   background: #ff7a32;
@@ -265,9 +299,11 @@ h3 {
   border-bottom: 1px solid var(--line);
 }
 
+
 .dark {
   background: var(--panel);
 }
+
 
 .two-col {
   display: grid;
@@ -282,15 +318,17 @@ h3 {
 }
 
 
-/* ABOUT HEADING SCROLLS NORMALLY */
+/* No sticky effect */
 
 .section-heading {
   position: static;
 }
 
+
 .copy {
   max-width: 720px;
 }
+
 
 .copy p {
   margin: 0 0 22px;
@@ -301,6 +339,7 @@ h3 {
 
   line-height: 1.75;
 }
+
 
 .copy p:last-child {
   margin-bottom: 0;
@@ -322,6 +361,7 @@ h3 {
   margin-top: 34px;
 }
 
+
 .card {
   min-height: 290px;
 
@@ -332,6 +372,7 @@ h3 {
   border: 1px solid var(--line);
   border-radius: 18px;
 }
+
 
 .number {
   display: block;
@@ -346,11 +387,13 @@ h3 {
   line-height: 1;
 }
 
+
 .card h3 {
   margin-bottom: 18px;
 
   font-size: 1.18rem;
 }
+
 
 .card p {
   margin: 0;
@@ -369,6 +412,7 @@ h3 {
   background: var(--bg);
 }
 
+
 .history-title {
   max-width: 760px;
 
@@ -378,6 +422,7 @@ h3 {
 
   line-height: 1.05;
 }
+
 
 .history-grid {
   display: grid;
@@ -392,6 +437,7 @@ h3 {
   align-items: stretch;
 }
 
+
 .history-card {
   min-width: 0;
 
@@ -403,6 +449,7 @@ h3 {
   border-radius: 18px;
 }
 
+
 .history-card h3 {
   margin: 0 0 24px;
 
@@ -413,6 +460,7 @@ h3 {
 
   line-height: 1.35;
 }
+
 
 .history-card p {
   margin: 0;
@@ -426,10 +474,10 @@ h3 {
 }
 
 
-/* If old strong tags are still somewhere in the HTML,
-   they will NOT appear bold inside these boxes. */
+/* Nothing inside the history text becomes bold */
 
-.history-card strong {
+.history-card strong,
+.history-card b {
   color: inherit;
   font-weight: inherit;
 }
@@ -443,6 +491,7 @@ h3 {
   max-width: 950px;
 }
 
+
 #listen .lead {
   max-width: 820px;
 
@@ -452,6 +501,7 @@ h3 {
 
   line-height: 1.7;
 }
+
 
 .player-shell {
   margin: 30px 0 12px;
@@ -463,6 +513,7 @@ h3 {
   border-radius: 14px;
 }
 
+
 .player-shell iframe {
   display: block;
 
@@ -470,6 +521,7 @@ h3 {
 
   border: 0;
 }
+
 
 .text-link {
   display: inline-block;
@@ -482,6 +534,7 @@ h3 {
 
   text-decoration: none;
 }
+
 
 .text-link:hover {
   text-decoration: underline;
@@ -502,9 +555,11 @@ h3 {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+
 .secondary-set .eyebrow {
   margin-bottom: 10px;
 }
+
 
 .secondary-set h3 {
   margin: 0 0 12px;
@@ -513,6 +568,7 @@ h3 {
 
   letter-spacing: -0.025em;
 }
+
 
 .secondary-set p {
   max-width: 760px;
@@ -537,13 +593,16 @@ h3 {
   background: var(--bg);
 }
 
+
 .booking .narrow {
   max-width: 680px;
 }
 
+
 .booking .eyebrow {
   margin-bottom: 14px;
 }
+
 
 .booking h2 {
   margin: 0;
@@ -555,6 +614,7 @@ h3 {
   letter-spacing: -0.04em;
 }
 
+
 .booking-details {
   margin: 20px 0 0;
 
@@ -563,9 +623,11 @@ h3 {
   font-size: 1.05rem;
 }
 
+
 .booking .meta {
   margin-top: 4px;
 }
+
 
 .booking-mail {
   margin: 26px 0 0;
@@ -574,6 +636,7 @@ h3 {
 
   font-weight: 800;
 }
+
 
 .booking-mail a {
   padding-bottom: 3px;
@@ -585,9 +648,11 @@ h3 {
   text-decoration: none;
 }
 
+
 .booking-mail a:hover {
   color: var(--accent);
 }
+
 
 .booking .actions {
   justify-content: center;
@@ -607,6 +672,7 @@ footer {
 
   color: #777777;
 }
+
 
 .footer-row {
   display: flex;
@@ -634,11 +700,18 @@ footer {
     background-position: 42% center;
   }
 
+
+  .hero-wrap {
+    min-height: 82vh;
+  }
+
+
   .hero-content {
     max-width: 100%;
 
     padding: 72px 0 56px;
   }
+
 
   .two-col {
     grid-template-columns: 1fr;
@@ -646,25 +719,31 @@ footer {
     gap: 34px;
   }
 
+
   .section-heading {
     position: static;
   }
+
 
   .cards {
     grid-template-columns: 1fr;
   }
 
+
   .card {
     min-height: 0;
   }
+
 
   .history-grid {
     grid-template-columns: 1fr;
   }
 
+
   .history-card {
     min-height: 0;
   }
+
 
   .section {
     padding: 66px 0;
@@ -701,6 +780,14 @@ footer {
     background-color: #080808;
   }
 
+
+  .hero-wrap {
+    min-height: 820px;
+
+    align-items: flex-end;
+  }
+
+
   .overlay {
     background:
       linear-gradient(
@@ -713,11 +800,14 @@ footer {
       );
   }
 
+
   .hero-content {
+    width: 100%;
     max-width: 100%;
 
     padding: 360px 0 42px;
   }
+
 
   .hero .eyebrow {
     margin-bottom: 12px;
@@ -725,15 +815,18 @@ footer {
     font-size: 0.72rem;
   }
 
+
   h1 {
     font-size: clamp(3.4rem, 17vw, 4.8rem);
 
     line-height: 0.92;
   }
 
+
   h2 {
     font-size: clamp(2rem, 11vw, 3.1rem);
   }
+
 
   .tagline {
     margin-top: 18px;
@@ -743,6 +836,7 @@ footer {
     line-height: 1.15;
   }
 
+
   .genres {
     margin-top: 14px;
 
@@ -750,6 +844,7 @@ footer {
 
     line-height: 1.45;
   }
+
 
   .meta {
     margin-top: 7px;
@@ -759,11 +854,13 @@ footer {
     line-height: 1.45;
   }
 
+
   .actions {
     margin-top: 24px;
 
     gap: 10px;
   }
+
 
   .btn {
     min-height: 48px;
@@ -778,6 +875,7 @@ footer {
     padding: 54px 0;
   }
 
+
   .copy p {
     font-size: 0.97rem;
 
@@ -791,6 +889,7 @@ footer {
     padding: 25px;
   }
 
+
   .number {
     margin-bottom: 22px;
 
@@ -798,7 +897,7 @@ footer {
   }
 
 
-  /* SELECTED HISTORY */
+  /* HISTORY */
 
   .history-title {
     font-size: clamp(1.9rem, 9vw, 2.7rem);
@@ -806,15 +905,18 @@ footer {
     line-height: 1.08;
   }
 
+
   .history-grid {
     gap: 16px;
 
     margin-top: 30px;
   }
 
+
   .history-card {
     padding: 25px;
   }
+
 
   .history-card h3 {
     margin-bottom: 20px;
@@ -822,15 +924,20 @@ footer {
     font-size: 1.15rem;
   }
 
+
   .history-card p {
     font-size: 0.96rem;
+
     font-weight: 400;
 
     line-height: 1.75;
   }
 
-  .history-card strong {
+
+  .history-card strong,
+  .history-card b {
     color: inherit;
+
     font-weight: inherit;
   }
 
@@ -850,9 +957,11 @@ footer {
     padding: 54px 0 58px;
   }
 
+
   .booking h2 {
     font-size: clamp(2rem, 10vw, 3rem);
   }
+
 
   .booking-mail {
     font-size: 1.05rem;
@@ -886,13 +995,21 @@ footer {
     background-position: 43% top;
   }
 
+
+  .hero-wrap {
+    min-height: 790px;
+  }
+
+
   .hero-content {
     padding-top: 340px;
   }
 
+
   h1 {
     font-size: 3.2rem;
   }
+
 
   .btn {
     padding: 10px 16px;
