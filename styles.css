@@ -54,8 +54,10 @@ a{
 .hero-image{
   position:absolute;
   inset:0;
-  background:url("hero-new.jpg") center 40%/cover no-repeat;
-  filter:grayscale(1);
+  background-image:url("hero-new.png");
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center 42%;
   transform:scale(1.02);
 }
 
@@ -65,15 +67,17 @@ a{
   background:
     linear-gradient(
       90deg,
-      rgba(0,0,0,.88) 0%,
-      rgba(0,0,0,.58) 46%,
-      rgba(0,0,0,.28) 100%
+      rgba(0,0,0,.90) 0%,
+      rgba(0,0,0,.70) 35%,
+      rgba(0,0,0,.42) 62%,
+      rgba(0,0,0,.20) 100%
     ),
     linear-gradient(
       0deg,
-      rgba(0,0,0,.95) 0%,
-      rgba(0,0,0,.12) 58%,
-      rgba(0,0,0,.18) 100%
+      rgba(0,0,0,.94) 0%,
+      rgba(0,0,0,.35) 45%,
+      rgba(0,0,0,.10) 75%,
+      rgba(0,0,0,.12) 100%
     );
 }
 
@@ -97,7 +101,7 @@ a{
 
 h1{
   margin:0;
-  font-size:clamp(4.2rem, 12vw, 9.5rem);
+  font-size:clamp(4.2rem,12vw,9.5rem);
   line-height:.88;
   letter-spacing:-.06em;
 }
@@ -232,13 +236,17 @@ h3{
 }
 
 
-/* SOUNDCloud / LISTEN */
+/* SOUNDCLOUD / LISTEN */
 
 .player-shell{
   margin:28px 0 12px;
   border-radius:16px;
   overflow:hidden;
   background:#fff;
+}
+
+.player-shell iframe{
+  display:block;
 }
 
 .text-link{
@@ -347,7 +355,28 @@ footer{
   }
 
   .hero-image{
-    background-position:58% 35%;
+    background-position:58% center;
+    transform:scale(1.01);
+  }
+
+  .overlay{
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0,0,0,.82) 0%,
+        rgba(0,0,0,.52) 60%,
+        rgba(0,0,0,.24) 100%
+      ),
+      linear-gradient(
+        0deg,
+        rgba(0,0,0,.96) 0%,
+        rgba(0,0,0,.36) 55%,
+        rgba(0,0,0,.12) 100%
+      );
+  }
+
+  .hero-content{
+    padding:72px 0 56px;
   }
 
   .two-col,
