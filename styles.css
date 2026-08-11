@@ -522,7 +522,9 @@ footer {
   .hero {
     min-height: 82vh;
     background-attachment: scroll;
-    background-position: 60% center;
+
+    /* Gesicht auf Tablet weiter ins Bild holen */
+    background-position: 42% center;
   }
 
   .overlay {
@@ -576,7 +578,6 @@ footer {
   .section {
     padding: 66px 0;
   }
-
 }
 
 
@@ -592,12 +593,40 @@ footer {
   }
 
   .hero {
-    min-height: 78vh;
-    background-position: 62% center;
+    min-height: 84vh;
+
+    /*
+      Wichtig:
+      Der alte Wert 62% hat das Foto auf dem Handy
+      zu weit verschoben und dein Gesicht abgeschnitten.
+    */
+    background-position: 32% center;
   }
 
   .hero-content {
-    padding: 62px 0 48px;
+    padding: 54px 0 44px;
+  }
+
+  /*
+    Auf Mobile etwas weniger Abdunklung über deinem Gesicht.
+    Unten bleibt es dunkel genug für Text und Buttons.
+  */
+  .overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.68) 0%,
+        rgba(0, 0, 0, 0.42) 48%,
+        rgba(0, 0, 0, 0.10) 78%,
+        rgba(0, 0, 0, 0.02) 100%
+      ),
+      linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.78) 0%,
+        rgba(0, 0, 0, 0.28) 48%,
+        rgba(0, 0, 0, 0.06) 78%,
+        rgba(0, 0, 0, 0) 100%
+      );
   }
 
   h1 {
@@ -665,7 +694,6 @@ footer {
     align-items: flex-start;
     gap: 5px;
   }
-
 }
 
 
@@ -676,7 +704,8 @@ footer {
 @media (max-width: 380px) {
 
   .hero {
-    min-height: 74vh;
+    min-height: 80vh;
+    background-position: 28% center;
   }
 
   h1 {
@@ -687,5 +716,4 @@ footer {
     padding: 10px 16px;
     font-size: 0.92rem;
   }
-
 }
