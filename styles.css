@@ -25,6 +25,7 @@ html {
 
 body {
   margin: 0;
+
   background: var(--bg);
   color: var(--text);
 
@@ -38,6 +39,7 @@ body {
     sans-serif;
 
   line-height: 1.6;
+
   -webkit-font-smoothing: antialiased;
 }
 
@@ -234,17 +236,21 @@ h3 {
 
 .btn:hover {
   border-color: #8b8b8b;
+
   transform: translateY(-2px);
 }
 
 .btn.primary {
   background: var(--accent);
+
   border-color: var(--accent);
+
   color: #111111;
 }
 
 .btn.primary:hover {
   background: #ff7a32;
+
   border-color: #ff7a32;
 }
 
@@ -277,6 +283,7 @@ h3 {
 
 .section-heading {
   position: sticky;
+
   top: 40px;
 }
 
@@ -406,14 +413,20 @@ h3 {
   color: var(--soft);
 
   font-size: 0.98rem;
+  font-weight: 400;
 
   line-height: 1.8;
 }
 
-.history-card strong {
-  color: #ffffff;
+/*
+   IMPORTANT:
+   HTML <strong> tags inside the history boxes
+   are deliberately displayed as normal text.
+*/
 
-  font-weight: 800;
+.history-card strong {
+  color: inherit;
+  font-weight: inherit;
 }
 
 
@@ -793,8 +806,14 @@ footer {
 
   .history-card p {
     font-size: 0.96rem;
+    font-weight: 400;
 
     line-height: 1.72;
+  }
+
+  .history-card strong {
+    color: inherit;
+    font-weight: inherit;
   }
 
 
