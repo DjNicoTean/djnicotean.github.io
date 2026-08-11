@@ -25,6 +25,7 @@ html {
 
 body {
   margin: 0;
+
   background: var(--bg);
   color: var(--text);
 
@@ -38,6 +39,7 @@ body {
     sans-serif;
 
   line-height: 1.6;
+
   -webkit-font-smoothing: antialiased;
 }
 
@@ -46,6 +48,7 @@ a {
 }
 
 img {
+  display: block;
   max-width: 100%;
 }
 
@@ -240,7 +243,6 @@ h3 {
 
 .btn.primary {
   background: var(--accent);
-
   border-color: var(--accent);
 
   color: #111111;
@@ -248,7 +250,6 @@ h3 {
 
 .btn.primary:hover {
   background: #ff7a32;
-
   border-color: #ff7a32;
 }
 
@@ -281,7 +282,6 @@ h3 {
 
 .section-heading {
   position: sticky;
-
   top: 40px;
 }
 
@@ -358,68 +358,62 @@ h3 {
 
 
 /* =========================================================
-   SELECTED HISTORY
+   THE JOURNEY
    ========================================================= */
 
-.history-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
-  gap: 24px;
-
-  margin-top: 34px;
-
-  align-items: stretch;
+#history {
+  position: relative;
 }
 
-.history-card {
-  min-width: 0;
-  min-height: 420px;
-
-  display: flex;
-  flex-direction: column;
-
-  padding: 30px;
-
-  background: var(--panel);
-
-  border: 1px solid var(--line);
-  border-radius: 16px;
+.story-section {
+  max-width: 960px;
 }
 
-.history-card h3 {
-  min-height: 52px;
+.story-section .eyebrow {
+  margin-bottom: 18px;
+}
 
-  margin: 0 0 22px;
+.story-section h2 {
+  max-width: 820px;
 
-  color: var(--text);
+  margin: 0 0 52px;
+}
 
-  font-size: 1.12rem;
+
+/*
+   Der Text läuft bewusst nicht über die komplette
+   Seitenbreite. Dadurch bleibt er auch bei längeren
+   Absätzen angenehm lesbar.
+*/
+
+.story-copy {
+  max-width: 880px;
+}
+
+.story-copy p {
+  margin: 0 0 28px;
+
+  color: #c8c8c8;
+
+  font-size: 1.06rem;
+  line-height: 1.85;
+}
+
+.story-copy p:last-child {
+  margin-bottom: 0;
+}
+
+
+/*
+   Locations, Events, Projekte und Artists
+   werden klar hervorgehoben, ohne dass der
+   Text wie eine Liste aussieht.
+*/
+
+.story-copy strong {
+  color: #ffffff;
+
   font-weight: 800;
-}
-
-.history-card p {
-  margin: 0;
-
-  color: var(--soft);
-
-  line-height: 1.75;
-}
-
-.history-card .history-bottom {
-  margin-top: auto;
-
-  padding-top: 24px;
-
-  color: var(--muted);
-
-  font-size: 0.94rem;
-
-  line-height: 1.6;
-
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 
@@ -617,7 +611,6 @@ footer {
     min-height: 82vh;
 
     background-attachment: scroll;
-
     background-position: 42% center;
   }
 
@@ -658,25 +651,30 @@ footer {
   }
 
 
-  .cards,
-  .history-grid {
+  .cards {
     grid-template-columns: 1fr;
   }
 
 
-  .card,
-  .history-card {
+  .card {
     min-height: 0;
   }
 
 
-  .history-card h3 {
-    min-height: 0;
+  .story-section {
+    max-width: 100%;
   }
 
 
-  .history-card .history-bottom {
-    margin-top: 24px;
+  .story-section h2 {
+    max-width: 760px;
+
+    margin-bottom: 42px;
+  }
+
+
+  .story-copy {
+    max-width: 760px;
   }
 
 
@@ -699,28 +697,20 @@ footer {
   }
 
 
-  /*
+  /* =======================================================
      HERO MOBILE
-
-     Hier wird das Foto NICHT mehr mit "cover"
-     extrem horizontal abgeschnitten.
-
-     auto 100% zeigt wesentlich mehr vom Originalbild.
-  */
+     ======================================================= */
 
   .hero {
     min-height: 860px;
 
     display: flex;
-
     align-items: flex-end;
 
     background-attachment: scroll;
 
     background-size: auto 100%;
-
     background-position: 47% top;
-
     background-repeat: no-repeat;
 
     background-color: #080808;
@@ -728,10 +718,8 @@ footer {
 
 
   /*
-     Gesicht oben möglichst frei lassen.
-
-     Dunkelheit wird hauptsächlich nach unten gelegt,
-     damit Texte trotzdem sauber lesbar bleiben.
+     Oben bleibt das Bild relativ frei.
+     Nach unten wird es dunkler für den Hero Text.
   */
 
   .overlay {
@@ -747,11 +735,6 @@ footer {
       );
   }
 
-
-  /*
-     Text beginnt erst weiter unten.
-     So bekommt das Gesicht oben mehr Raum.
-  */
 
   .hero-content {
     max-width: 100%;
@@ -792,7 +775,6 @@ footer {
     margin-top: 14px;
 
     font-size: 0.95rem;
-
     line-height: 1.45;
   }
 
@@ -801,7 +783,6 @@ footer {
     margin-top: 7px;
 
     font-size: 0.9rem;
-
     line-height: 1.45;
   }
 
@@ -820,13 +801,16 @@ footer {
   }
 
 
+  /* =======================================================
+     GENERAL MOBILE
+     ======================================================= */
+
   .section {
     padding: 54px 0;
   }
 
 
-  .card,
-  .history-card {
+  .card {
     padding: 25px;
   }
 
@@ -838,10 +822,51 @@ footer {
   }
 
 
-  .history-card p {
-    line-height: 1.68;
+  /* =======================================================
+     THE JOURNEY MOBILE
+     ======================================================= */
+
+  .story-section .eyebrow {
+    margin-bottom: 14px;
   }
 
+
+  .story-section h2 {
+    max-width: 100%;
+
+    margin-bottom: 32px;
+
+    font-size: clamp(2.15rem, 11vw, 3rem);
+
+    line-height: 1.03;
+  }
+
+
+  .story-copy {
+    max-width: 100%;
+  }
+
+
+  .story-copy p {
+    margin-bottom: 24px;
+
+    color: #c8c8c8;
+
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+
+  .story-copy strong {
+    color: #ffffff;
+
+    font-weight: 800;
+  }
+
+
+  /* =======================================================
+     LIVE SET MOBILE
+     ======================================================= */
 
   .secondary-set {
     margin-top: 38px;
@@ -849,6 +874,10 @@ footer {
     padding-top: 26px;
   }
 
+
+  /* =======================================================
+     BOOKING MOBILE
+     ======================================================= */
 
   .booking {
     padding: 54px 0 58px;
@@ -864,6 +893,10 @@ footer {
     font-size: 1.05rem;
   }
 
+
+  /* =======================================================
+     FOOTER MOBILE
+     ======================================================= */
 
   .footer-row {
     flex-direction: column;
@@ -886,7 +919,6 @@ footer {
     min-height: 820px;
 
     background-size: auto 100%;
-
     background-position: 48% top;
   }
 
@@ -905,6 +937,17 @@ footer {
     padding: 10px 16px;
 
     font-size: 0.92rem;
+  }
+
+
+  .story-section h2 {
+    font-size: 2rem;
+  }
+
+
+  .story-copy p {
+    font-size: 0.98rem;
+    line-height: 1.72;
   }
 
 }
