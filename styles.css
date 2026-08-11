@@ -9,6 +9,9 @@
   --max:1120px;
 }
 
+
+/* RESET */
+
 *{
   box-sizing:border-box;
 }
@@ -64,6 +67,7 @@ a{
 .overlay{
   position:absolute;
   inset:0;
+
   background:
     linear-gradient(
       90deg,
@@ -159,10 +163,12 @@ h3{
   border-radius:999px;
   text-decoration:none;
   font-weight:700;
+
   transition:
     transform .2s ease,
     border-color .2s ease,
-    background .2s ease;
+    background .2s ease,
+    color .2s ease;
 }
 
 .btn:hover{
@@ -181,7 +187,7 @@ h3{
 }
 
 
-/* SECTIONS */
+/* GENERAL SECTIONS */
 
 .section{
   padding:92px 0;
@@ -228,11 +234,7 @@ h3{
   font-weight:900;
 }
 
-.card p,
-.history-grid p,
-.lead,
-.manifesto p,
-.booking p{
+.card p{
   color:#c8c8c8;
 }
 
@@ -246,8 +248,21 @@ h3{
   margin-top:30px;
 }
 
+.history-grid p{
+  color:#c8c8c8;
+}
+
 
 /* LISTEN */
+
+#listen h2{
+  max-width:950px;
+}
+
+#listen .lead{
+  max-width:900px;
+  color:#c8c8c8;
+}
 
 .player-shell{
   margin:28px 0 12px;
@@ -272,14 +287,6 @@ h3{
 
 .text-link:hover{
   text-decoration:underline;
-}
-
-#listen .lead{
-  max-width:900px;
-}
-
-#listen h2{
-  max-width:950px;
 }
 
 
@@ -308,52 +315,68 @@ h3{
 }
 
 
-/* PHILOSOPHY */
-
-.manifesto{
-  text-align:center;
-}
-
-blockquote{
-  margin:10px 0 22px;
-  font-size:clamp(2.6rem,7vw,6rem);
-  line-height:.95;
-  font-weight:900;
-  letter-spacing:-.05em;
-}
-
-
 /* BOOKING */
 
 .booking{
   text-align:center;
+  padding:68px 0 72px;
+  background:var(--bg);
+}
+
+.booking .narrow{
+  max-width:680px;
+}
+
+.booking .eyebrow{
+  margin-bottom:12px;
 }
 
 .booking h2{
-  font-size:clamp(3.5rem,8vw,7rem);
+  margin:0;
+  font-size:clamp(2.2rem,4vw,3.6rem);
+  line-height:1.05;
+  letter-spacing:-.035em;
 }
 
 .booking-mail{
-  font-size:clamp(1.2rem,3vw,2rem);
-  font-weight:800;
+  margin:24px 0 0;
+  font-size:clamp(1.1rem,2vw,1.4rem);
+  font-weight:700;
 }
 
 .booking-mail a{
-  text-decoration:underline;
-  text-underline-offset:4px;
+  color:var(--text);
+  text-decoration:none;
+  border-bottom:1px solid var(--accent);
+  padding-bottom:3px;
+
+  transition:
+    color .2s ease,
+    border-color .2s ease;
+}
+
+.booking-mail a:hover{
+  color:var(--accent);
+  border-color:var(--accent);
+}
+
+.booking .actions{
+  margin-top:28px;
 }
 
 
 /* FOOTER */
 
 footer{
-  padding:26px 0;
+  padding:24px 0;
   color:#777;
+  background:var(--bg);
 }
 
 .footer-row{
   display:flex;
   justify-content:space-between;
+  align-items:center;
   gap:20px;
   font-size:.85rem;
 }
@@ -365,8 +388,13 @@ footer{
 
   .hero{
     min-height:80vh;
-    background-position:60% center;
+
+    /*
+      Fixed backgrounds are unreliable on many mobile browsers.
+      Desktop keeps the fixed scroll effect.
+    */
     background-attachment:scroll;
+    background-position:60% center;
   }
 
   .overlay{
@@ -417,7 +445,71 @@ footer{
     padding-top:28px;
   }
 
+  .booking{
+    padding:54px 0 58px;
+  }
+
+  .booking h2{
+    font-size:clamp(2rem,9vw,3rem);
+  }
+
+  .booking-mail{
+    font-size:1.05rem;
+  }
+
   .footer-row{
     flex-direction:column;
+    align-items:flex-start;
+    gap:6px;
   }
+
+}
+
+
+/* SMALL PHONES */
+
+@media(max-width:480px){
+
+  .wrap,
+  .narrow{
+    width:calc(100% - 30px);
+  }
+
+  .hero{
+    min-height:76vh;
+    background-position:62% center;
+  }
+
+  .hero-content{
+    padding:60px 0 46px;
+  }
+
+  h1{
+    font-size:clamp(3.3rem,18vw,5rem);
+  }
+
+  .genres{
+    font-size:.95rem;
+  }
+
+  .meta{
+    font-size:.9rem;
+  }
+
+  .section{
+    padding:54px 0;
+  }
+
+  .card{
+    padding:24px;
+  }
+
+  .booking{
+    padding:48px 0 52px;
+  }
+
+  .booking .actions{
+    justify-content:center;
+  }
+
 }
