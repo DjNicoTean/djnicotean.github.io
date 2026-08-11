@@ -25,6 +25,7 @@ html {
 
 body {
   margin: 0;
+
   background: var(--bg);
   color: var(--text);
 
@@ -38,6 +39,7 @@ body {
     sans-serif;
 
   line-height: 1.6;
+
   -webkit-font-smoothing: antialiased;
 }
 
@@ -67,6 +69,7 @@ img {
 
 .hero {
   position: relative;
+
   min-height: 92vh;
 
   display: flex;
@@ -127,6 +130,7 @@ img {
   font-weight: 800;
 
   letter-spacing: 0.18em;
+
   text-transform: uppercase;
 }
 
@@ -143,6 +147,7 @@ h1 {
   font-size: clamp(4rem, 9vw, 7.6rem);
 
   line-height: 0.9;
+
   letter-spacing: -0.055em;
 }
 
@@ -152,6 +157,7 @@ h2 {
   font-size: clamp(2.2rem, 5vw, 4.2rem);
 
   line-height: 1;
+
   letter-spacing: -0.04em;
 }
 
@@ -230,11 +236,13 @@ h3 {
 
 .btn:hover {
   border-color: #8b8b8b;
+
   transform: translateY(-2px);
 }
 
 .btn.primary {
   background: var(--accent);
+
   border-color: var(--accent);
 
   color: #111111;
@@ -242,6 +250,7 @@ h3 {
 
 .btn.primary:hover {
   background: #ff7a32;
+
   border-color: #ff7a32;
 }
 
@@ -273,10 +282,7 @@ h3 {
 }
 
 
-/* IMPORTANT:
-   About heading scrolls normally with the page.
-   No sticky positioning.
-*/
+/* ABOUT HEADING SCROLLS NORMALLY */
 
 .section-heading {
   position: static;
@@ -287,9 +293,13 @@ h3 {
 }
 
 .copy p {
-  margin: 0 0 19px;
+  margin: 0 0 22px;
 
   color: #d6d6d6;
+
+  font-size: 1rem;
+
+  line-height: 1.75;
 }
 
 .copy p:last-child {
@@ -313,7 +323,7 @@ h3 {
 }
 
 .card {
-  min-height: 310px;
+  min-height: 290px;
 
   padding: 32px;
 
@@ -346,6 +356,8 @@ h3 {
   margin: 0;
 
   color: var(--soft);
+
+  line-height: 1.7;
 }
 
 
@@ -358,7 +370,7 @@ h3 {
 }
 
 .history-title {
-  max-width: 800px;
+  max-width: 760px;
 
   margin-top: 6px;
 
@@ -392,11 +404,11 @@ h3 {
 }
 
 .history-card h3 {
-  margin: 0 0 28px;
+  margin: 0 0 24px;
 
   color: #ffffff;
 
-  font-size: 1.25rem;
+  font-size: 1.18rem;
   font-weight: 800;
 
   line-height: 1.35;
@@ -410,11 +422,12 @@ h3 {
   font-size: 0.98rem;
   font-weight: 400;
 
-  line-height: 1.8;
+  line-height: 1.85;
 }
 
 
-/* No bold text inside history paragraphs */
+/* If old strong tags are still somewhere in the HTML,
+   they will NOT appear bold inside these boxes. */
 
 .history-card strong {
   color: inherit;
@@ -436,6 +449,8 @@ h3 {
   margin: 22px 0 0;
 
   color: var(--soft);
+
+  line-height: 1.7;
 }
 
 .player-shell {
@@ -470,6 +485,7 @@ h3 {
 
 .text-link:hover {
   text-decoration: underline;
+
   text-underline-offset: 4px;
 }
 
@@ -504,6 +520,8 @@ h3 {
   margin: 0 0 8px;
 
   color: var(--soft);
+
+  line-height: 1.7;
 }
 
 
@@ -651,6 +669,7 @@ footer {
   .section {
     padding: 66px 0;
   }
+
 }
 
 
@@ -759,6 +778,15 @@ footer {
     padding: 54px 0;
   }
 
+  .copy p {
+    font-size: 0.97rem;
+
+    line-height: 1.72;
+  }
+
+
+  /* HIGHLIGHTS */
+
   .card {
     padding: 25px;
   }
@@ -798,7 +826,7 @@ footer {
     font-size: 0.96rem;
     font-weight: 400;
 
-    line-height: 1.72;
+    line-height: 1.75;
   }
 
   .history-card strong {
@@ -840,6 +868,7 @@ footer {
 
     gap: 5px;
   }
+
 }
 
 
@@ -870,4 +899,5 @@ footer {
 
     font-size: 0.92rem;
   }
+
 }
