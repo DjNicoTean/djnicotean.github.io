@@ -25,7 +25,6 @@ html {
 
 body {
   margin: 0;
-
   background: var(--bg);
   color: var(--text);
 
@@ -39,7 +38,6 @@ body {
     sans-serif;
 
   line-height: 1.6;
-
   -webkit-font-smoothing: antialiased;
 }
 
@@ -69,7 +67,6 @@ img {
 
 .hero {
   position: relative;
-
   min-height: 92vh;
 
   display: flex;
@@ -130,7 +127,6 @@ img {
   font-weight: 800;
 
   letter-spacing: 0.18em;
-
   text-transform: uppercase;
 }
 
@@ -147,7 +143,6 @@ h1 {
   font-size: clamp(4rem, 9vw, 7.6rem);
 
   line-height: 0.9;
-
   letter-spacing: -0.055em;
 }
 
@@ -157,7 +152,6 @@ h2 {
   font-size: clamp(2.2rem, 5vw, 4.2rem);
 
   line-height: 1;
-
   letter-spacing: -0.04em;
 }
 
@@ -236,13 +230,11 @@ h3 {
 
 .btn:hover {
   border-color: #8b8b8b;
-
   transform: translateY(-2px);
 }
 
 .btn.primary {
   background: var(--accent);
-
   border-color: var(--accent);
 
   color: #111111;
@@ -250,7 +242,6 @@ h3 {
 
 .btn.primary:hover {
   background: #ff7a32;
-
   border-color: #ff7a32;
 }
 
@@ -281,10 +272,14 @@ h3 {
   align-items: start;
 }
 
-.section-heading {
-  position: sticky;
 
-  top: 40px;
+/* IMPORTANT:
+   About heading scrolls normally with the page.
+   No sticky positioning.
+*/
+
+.section-heading {
+  position: static;
 }
 
 .copy {
@@ -418,11 +413,8 @@ h3 {
   line-height: 1.8;
 }
 
-/*
-   IMPORTANT:
-   HTML <strong> tags inside the history boxes
-   are deliberately displayed as normal text.
-*/
+
+/* No bold text inside history paragraphs */
 
 .history-card strong {
   color: inherit;
@@ -478,7 +470,6 @@ h3 {
 
 .text-link:hover {
   text-decoration: underline;
-
   text-underline-offset: 4px;
 }
 
@@ -660,7 +651,6 @@ footer {
   .section {
     padding: 66px 0;
   }
-
 }
 
 
@@ -850,7 +840,6 @@ footer {
 
     gap: 5px;
   }
-
 }
 
 
@@ -881,5 +870,4 @@ footer {
 
     font-size: 0.92rem;
   }
-
 }
